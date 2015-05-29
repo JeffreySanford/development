@@ -1,0 +1,9 @@
+footer {
+	bottom: 50px;
+}
+
+#targetContent {
+	margin: 50px 200px;
+	font-size: 3em;
+	color: blue;
+}
