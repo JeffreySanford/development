@@ -1,3 +1,9 @@
+#container {
+	background-color: whitesmoke;
+	width: 90%;
+	margin 0 auto;
+}
+
 footer {
 	bottom: 50px;
 }
