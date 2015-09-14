@@ -7,8 +7,8 @@ adsense.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'app/views/main.html',
-        controller: 'MainController'
+        templateUrl: 'app/views/recipes.html',
+        controller: 'RecipesController'
       }).
       when('/food', {
         templateUrl: 'app/views/food.html',
@@ -26,6 +26,14 @@ adsense.config(['$routeProvider',
         templateUrl: 'app/views/recipes-detail.html',
         controller: 'RecipesDetailController'
       }).
+      when('/cuisine', {
+              templateUrl: 'app/views/cuisne.html',
+              controller: 'CuisineController'
+            }).
+            when('/cuisne/:cuisineId', {
+              templateUrl: 'app/views/cuisine-detail.html',
+              controller: 'CuisineDetailController'
+            }).
       when('/people', {
         templateUrl: 'app/views/people.html',
         controller: 'PeopleController'

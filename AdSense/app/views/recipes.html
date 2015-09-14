@@ -4,7 +4,7 @@
 <p>Box layout Style</p>
 <div id="articles-box-style" ng-repeat="recipe in json.recipes">
   <a href="#/recipes/{{recipe.id}}">
-    <img ng-src="{{ recipe.featuredImage }}"></img>
+    <img ng-src="{{ recipe.featuredImage }}" />
     <p id="box-style-title">{{ recipe.title }}</p>
     <p>{{ recipe.author }}</p>
     <p class="teaser">{{ recipe.teaser }}</p>
@@ -15,7 +15,7 @@
 <p>Listing Layout Style</p>
 <div id="articles-listing" ng-repeat="recipe in json.recipes">
   <a href="#/recipes/{{recipe.id}}">
-    <img ng-src="{{ recipe.featuredImage }}"></img>
+    <img ng-src="{{ recipe.featuredImage }}" />
     <p id="title">{{recipe.title}}</p>
     <p id="author"> by {{recipe.author}}</p>
     <p class="teaser" style="float:left;">{{recipe.teaser}}</p>
