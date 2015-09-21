@@ -1,4 +1,0 @@
-function init () {
-    alert ('loaded');
-}
-    
