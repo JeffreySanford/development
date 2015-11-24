@@ -21,8 +21,9 @@
       var cur_cond = obj.current_observation;
 
       var cur_temp    = cur_cond.temp_c,
-  /*        cur_icon    = cur_cond.icon_url, */
-  /*        cur_icon    = "https://icons.wxug.com/i/c/f/" + cur_cond.icon + ".gif", 
+  /*
+            cur_icon    = cur_cond.icon_url, 
+            cur_icon    = "https://icons.wxug.com/i/c/f/" + cur_cond.icon + ".gif", 
             The gif is hosted on an unsecure version and throwing errors.  Keeping 
             the area, turning off the icon.
    */
