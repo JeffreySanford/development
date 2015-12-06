@@ -1,12 +1,20 @@
-var bardata = [];
+(function IFEE() {
+    'use strict';
+    var bardata = [];
+    var i;
+/**
     d3.tsv('data.tsv', function(data) {
         console.log(data);
 
         for (key in data) {
             bardata.push(data[key].value)
         }
+ */
+    for (i = 1; i < 100; i += 1 ) {
+        bardata.push(Math.round(Math.random() * 30));
+    }
 
-    var margin = { top: 30, right: 30, bottom: 40, left:50 }
+    var margin = { top: 30, right: 30, bottom: 40, left:50 };
 
     var height = 400 - margin.top - margin.bottom,
         width = 600 - margin.left - margin.right,
@@ -16,8 +24,8 @@ var bardata = [];
     var tempColor;
 
     var colors = d3.scale.linear()
-    .domain([0, bardata.length*.33, bardata.length*.66, bardata.length])
-    .range(['#B58929','#C61C6F', '#268BD2', '#85992C'])
+    .domain([0, bardata.length*0.33, bardata.length*0.66, bardata.length])
+    .range(['#B58929','#C61C6F', '#268BD2', '#85992C']);
 
     var yScale = d3.scale.linear()
             .domain([0, d3.max(bardata)])
@@ -25,13 +33,13 @@ var bardata = [];
 
     var xScale = d3.scale.ordinal()
             .domain(d3.range(0, bardata.length))
-            .rangeBands([0, width], 0.2)
+            .rangeBands([0, width], 0.2);
 
     var tooltip = d3.select('body').append('div')
             .style('position', 'absolute')
             .style('padding', '0 10px')
             .style('background', 'white')
-            .style('opacity', 0)
+            .style('opacity', 0);
 
     var myChart = d3.select('#chart').append('svg')
         .style('background', '#E7E0CB')
@@ -54,16 +62,14 @@ var bardata = [];
         .on('mouseover', function(d) {
 
             tooltip.transition()
-                .style('opacity', .9)
-
+                .style('opacity', 0.9)
             tooltip.html(d)
                 .style('left', (d3.event.pageX - 35) + 'px')
                 .style('top',  (d3.event.pageY - 30) + 'px')
 
-
             tempColor = this.style.fill;
             d3.select(this)
-                .style('opacity', .5)
+                .style('opacity', 0.5)
                 .style('fill', 'yellow')
         })
 
@@ -88,12 +94,12 @@ var bardata = [];
 
     var vGuideScale = d3.scale.linear()
         .domain([0, d3.max(bardata)])
-        .range([height, 0])
+        .range([height, 0]);
 
     var vAxis = d3.svg.axis()
         .scale(vGuideScale)
         .orient('left')
-        .ticks(10)
+        .ticks(10);
 
     var vGuide = d3.select('svg').append('g')
         vAxis(vGuide)
@@ -101,14 +107,14 @@ var bardata = [];
         vGuide.selectAll('path')
             .style({ fill: 'none', stroke: "#000"})
         vGuide.selectAll('line')
-            .style({ stroke: "#000"})
+            .style({ stroke: "#000"});
 
     var hAxis = d3.svg.axis()
         .scale(xScale)
         .orient('bottom')
         .tickValues(xScale.domain().filter(function(d, i) {
             return !(i % (bardata.length/5));
-        }))
+        }));
 
     var hGuide = d3.select('svg').append('g')
         hAxis(hGuide)
@@ -116,5 +122,5 @@ var bardata = [];
         hGuide.selectAll('path')
             .style({ fill: 'none', stroke: "#000"})
         hGuide.selectAll('line')
-            .style({ stroke: "#000"})
-});
+            .style({ stroke: "#000"});
+}());

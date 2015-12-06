@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>DataVis - Angular2</title>
+		<!--  ES6 Shim to support older browsers -->
+		
+		<!--  Jquery to suport bootsrap styling -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+		<!--  Bootstrap 4 ALPHA CODE - NOT FOR PRODUCTION -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+		<!-- Angular 2 Alpha 2.0.0.47 - NOT FOR PRODUCTION -->
+		<script src="node_modules/angular2/bundles/angular2.sfx.dev.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div>
+						<ul>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#/linechart">Line Chart</a></li>
+							<li><a href="#/barchart">Bar Chart</a></li> 
+							<li><a href="#/piechart">Pie Chart</a></li> 
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<section>
+				<h2>D3js Data Visualization under Angular 2</h2>
+				<p><i>Don't use this in a production enviroment</i></p>
+			<router-outlet></router-outlet>
+			<ng-D3></ng-D3>
+			<script>
+    			// Rewrite the paths to load the files
+    			System.paths = {
+    				// Angular
+        			'angular2/*': '/angular2/*.js', 
+        			// Runtime assertions
+        			'rtts_assert/*': '/rtts_assert/*.js', 
+        			// The my-app component
+        			'app': 'app.es6'
+    			};
+ 
+    			// Kick off the application
+    			System.import('app');
+    		</script>
+		</div>
+	</body>
+</html>
