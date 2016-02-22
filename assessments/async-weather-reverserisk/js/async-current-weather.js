@@ -1,7 +1,7 @@
 (function () {
   "use strict";  
   function getCurrent() {
-    var json = "https://api.wunderground.com/api/6747ce062221cfb4/conditions/q/zmw:00000.1.03772.json";
+    var json = "https://api.wunderground.com/api/6747ce062221cfb4/conditions/q/WA/Seattle.json";
     var req = new XMLHttpRequest(); // a new request
 
     req.onreadystatechange = function() {
@@ -20,7 +20,7 @@
       var obj = httpResponse;
       var cur_cond = obj.current_observation;
 
-      var cur_temp    = cur_cond.temp_c,
+      var cur_temp    = cur_cond.temp_f,
   /*
             cur_icon    = cur_cond.icon_url, 
             cur_icon    = "https://icons.wxug.com/i/c/f/" + cur_cond.icon + ".gif", 
@@ -36,7 +36,7 @@
         currentWeather.innerHTML ='<p id="current-city">' + cur_city + '</p>';
         currentWeather.innerHTML +='<img id="current-icon" />';
         /*document.getElementById('current-icon').src = cur_icon; */
-        currentWeather.innerHTML +='<p id="current-temp">' + cur_temp + '&#176;C</p>';
+        currentWeather.innerHTML +='<p id="current-temp">' + cur_temp + '&#176;F</p>';
         currentWeather.innerHTML +='<p id="current-condition">' + cur_weather + '</p>';
         currentWeather.innerHTML +='<p class="clearfix" id="last-updated">Updated at ' + cur_time + '</p>';
       }
