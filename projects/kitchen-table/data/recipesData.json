@@ -32,6 +32,14 @@
     "featuredImage": "articles/recipes/german-speatzle-dumplings/images/german-speatzle.jpg",
     "teaser": "This is the german-speatzle teaser line.",
     "url": "german-speatzle-dumplings/german-speatzle-dumplings.html"
+    },
+    {
+    "id": "fresh-tomato-soup",
+    "title": "Fresh Tomato Soup",
+    "author": "Jeffrey Sanford",
+    "featuredImage": "articles/recipes/german-speatzle-dumplings/images/german-speatzle.jpg",
+    "teaser": "This is the tomato soup teaser line.",
+    "url": "fresh-tomato-soup/fresh-tomato-soup.html"
     }
   ]
 }
